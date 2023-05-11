@@ -140,7 +140,7 @@ def stop_move():
 # start message
 print("\n")
 print("The default speed & direction of motor is LOW & Forward.....")
-print("r-run s-stop f-forward b-backward r-clockwise rotation a-anti clockwise rotation l-low m-medium h-high e-exit")
+print("h-halt/stop w-forward s-backward e-clockwise rotation q-anti clockwise rotation 1-low 2-medium 3-high 0-exit")
 print("\n")
 
 # motor control loop
@@ -148,45 +148,34 @@ while(1):
 
     keyboard_in = input()
 
-    if keyboard_in == 'r':
-        print("run")
-        if(temp1 == 1):
-            forward_move()
-            print("forward")
-            keyboard_in = 'z'
-        else:
-            backwards_move()
-            print("backward")
-            keyboard_in = 'z'
-
-    elif keyboard_in == 's':
+    if keyboard_in == 'h':
         stop_move()
-        print("stop")
+        print("halt")
         keyboard_in = 'z'
 
-    elif keyboard_in == 'f':
+    elif keyboard_in == 'w':
         forward_move()
         print("forward")
         temp1 = 1
         keyboard_in = 'z'
 
-    elif keyboard_in == 'b':
+    elif keyboard_in == 's':
         backwards_move()
         print("backward")
         temp1 = 0
         keyboard_in = 'z'
 
-    elif keyboard_in == 'r':
+    elif keyboard_in == 'e':
         clock_move()
         print("clockwise rotation")
         keyboard_in = 'z'
 
-    elif keyboard_in == 'a':
+    elif keyboard_in == 'q':
         anticlock_move()
         print("anti-clockwise rotation")
         keyboard_in = 'z'
 
-    elif keyboard_in == 'l':
+    elif keyboard_in == '1':
         print("low")
         front_pA.ChangeDutyCycle(25)
         front_pB.ChangeDutyCycle(25)
@@ -194,7 +183,7 @@ while(1):
         rear_pB.ChangeDutyCycle(25)
         keyboard_in = 'z'
 
-    elif keyboard_in == 'm':
+    elif keyboard_in == '2':
         print("medium")
         front_pA.ChangeDutyCycle(50)
         front_pB.ChangeDutyCycle(50)
@@ -202,7 +191,7 @@ while(1):
         rear_pB.ChangeDutyCycle(50)
         keyboard_in = 'z'
 
-    elif keyboard_in == 'h':
+    elif keyboard_in == '3':
         print("high")
         front_pA.ChangeDutyCycle(75)
         front_pB.ChangeDutyCycle(75)
@@ -210,7 +199,7 @@ while(1):
         rear_pB.ChangeDutyCycle(75)
         keyboard_in = 'z'
     
-    elif keyboard_in == 'e':
+    elif keyboard_in == '0':
         GPIO.cleanup()
         break
 
