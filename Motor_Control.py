@@ -100,29 +100,27 @@ def backwards_move():
 
 def clock_move():
 
-    # front left forward & rear right backward
+    # left forward & right backward
     GPIO.output(front_left_motor[1], GPIO.HIGH)
     GPIO.output(front_left_motor[0], GPIO.LOW)
     GPIO.output(rear_right_motor[1], GPIO.LOW)
     GPIO.output(rear_right_motor[0], GPIO.HIGH)
-    # rest is off
     GPIO.output(front_right_motor[1], GPIO.LOW)
-    GPIO.output(front_right_motor[0], GPIO.LOW)
-    GPIO.output(rear_left_motor[1], GPIO.LOW)
+    GPIO.output(front_right_motor[0], GPIO.HIGH)
+    GPIO.output(rear_left_motor[1], GPIO.HIGH)
     GPIO.output(rear_left_motor[0], GPIO.LOW)
 
 
 def anticlock_move():
 
-    # front right forward & rear left backward
+    # right forward & left backward
     GPIO.output(front_right_motor[1], GPIO.HIGH)
     GPIO.output(front_right_motor[0], GPIO.LOW)
     GPIO.output(rear_left_motor[1], GPIO.LOW)
     GPIO.output(rear_left_motor[0], GPIO.HIGH)
-    # rest is off
     GPIO.output(front_left_motor[1], GPIO.LOW)
-    GPIO.output(front_left_motor[0], GPIO.LOW)
-    GPIO.output(rear_right_motor[1], GPIO.LOW)
+    GPIO.output(front_left_motor[0], GPIO.HIGH)
+    GPIO.output(rear_right_motor[1], GPIO.HIGH)
     GPIO.output(rear_right_motor[0], GPIO.LOW)
 
 
