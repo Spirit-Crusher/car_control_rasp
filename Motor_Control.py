@@ -89,13 +89,28 @@ def backwards_move():
     GPIO.output(rear_right_motor[0], GPIO.HIGH)
 
 
-# def quad1_move():
+def left_move():
+    
+    GPIO.output(front_right_motor[1], GPIO.HIGH)
+    GPIO.output(front_right_motor[0], GPIO.LOW)
+    GPIO.output(rear_right_motor[1], GPIO.LOW)
+    GPIO.output(rear_right_motor[0], GPIO.HIGH)
+    GPIO.output(front_left_motor[1], GPIO.LOW)
+    GPIO.output(front_left_motor[0], GPIO.HIGH)
+    GPIO.output(rear_left_motor[1], GPIO.HIGH)
+    GPIO.output(rear_left_motor[0], GPIO.LOW)
 
-# def quad2_move():
 
-# def quad3_move():
+def right_move():
 
-# def quad4_move():
+    GPIO.output(front_right_motor[1], GPIO.LOW)
+    GPIO.output(front_right_motor[0], GPIO.HIGH)
+    GPIO.output(rear_right_motor[1], GPIO.HIGH)
+    GPIO.output(rear_right_motor[0], GPIO.LOW)
+    GPIO.output(front_left_motor[1], GPIO.HIGH)
+    GPIO.output(front_left_motor[0], GPIO.LOW)
+    GPIO.output(rear_left_motor[1], GPIO.LOW)
+    GPIO.output(rear_left_motor[0], GPIO.HIGH)
 
 
 def clock_move():
